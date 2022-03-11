@@ -2,6 +2,8 @@
   "name": "bvbrsvp",
   "packageManager": "yarn@3.2.0",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "latest",
+    "bootstrap": "latest",
     "jquery": "latest",
     "lite-server": "latest"
   }

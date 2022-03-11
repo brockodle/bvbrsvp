@@ -5,6 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@fortawesome/fontawesome-free@npm:latest":
+  version: 6.0.0
+  resolution: "@fortawesome/fontawesome-free@npm:6.0.0"
+  checksum: 138e352ba6e9ecdd711899943919d4020704ddf22dc6a7de14d0dbfb5222c60738fcded6ca39a3fcd6fa8eaf9b83033e44dd25625d9e0118a9cea1d4585b36de
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.0.1":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -229,6 +236,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bootstrap@npm:latest":
+  version: 5.1.3
+  resolution: "bootstrap@npm:5.1.3"
+  peerDependencies:
+    "@popperjs/core": ^2.10.2
+  checksum: 301b5ed872efba061104cf22ac93568e3837867fb5527ab9326a51510fb752bd4883e1d488225c8be72f86d9d3a55ef5b166aa7fa62c2fdd077c3f05b65752f8
+  languageName: node
+  linkType: hard
+
 "brace-expansion@npm:^1.1.7":
   version: 1.1.11
   resolution: "brace-expansion@npm:1.1.11"
@@ -332,6 +348,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "bvbrsvp@workspace:."
   dependencies:
+    "@fortawesome/fontawesome-free": latest
+    bootstrap: latest
     jquery: latest
     lite-server: latest
   languageName: unknown

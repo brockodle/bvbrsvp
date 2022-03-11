@@ -1,0 +1,23 @@
+#mobilebody {
+    padding: 10px;
+    width: auto;
+}
+
+.grouptable {
+    border: 1px solid black;
+    padding: 10px;
+    width: 49%;
+    margin-bottom: 5px;
+}
+
+#tables {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 98%;
+}
+
+#addtable {
+    width: 98%;
+    padding: 1%;
+}
