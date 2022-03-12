@@ -2,11 +2,12 @@
 <html>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
+<title>BvB RSVP</title>
 
 <head>
-    <title>BvB RSVP</title>
+    <script type="text/javascript" src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <link rel="stylesheet" href="bvb.css" />
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css" />
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic" rel="stylesheet" type="text/css" />
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="node_modules/jquery/dist/jquery.js"></script>
@@ -14,11 +15,11 @@
 
 <body>
     <main id="mobilebody">
-        <div id="headersect">Bears Vs. Babies Table Setup</div>
+        <div id="headersect">RPG Table Setup</div>
         <div id="controls">
-            <button class="btn" id="addtable">Add a Table</button>
-            <input id="playerinput" data="" />
-            <button class="btn" id="addplayer">Add a Player</button>
+            <button class="btn" id="addtable">Add a Table&nbsp;<i class="fas fa-table"></i></button>
+            <input type="text" id="playerinput" name="playername" />
+            <button class="btn" id="addplayer">Add a Player&nbsp;<i class="fas fa-person"></i></button>
         </div>
         <div id="tables"></div>
     </main>
