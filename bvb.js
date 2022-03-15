@@ -1,62 +1,54 @@
 'use strict';
 
-function player(name, table) {
-    this.name = name;
-    this.table = table;
-}
+(function () {
 
-function table(tablenum, randocol, players) {
-    this.tablenum = tablenum;
-    this.randocol = randocol;
-    this.players = players;
-}
+    let tnum = 0;
+    const tablebtn = document.getElementById('addtable');
+    const playerbtn = document.getElementById('addplayer');
 
-let tnum = 0;
-let pnum = 0;
+    console.log('start is started');
 
-function buildtable() {
-
-    tnum++;
-
-    let newtable = new table(tnum, 'rgb('+Math.round((Math.random()*150)+155)+', '+Math.round((Math.random()*150)+155)+', '+Math.round((Math.random()*150)+155)+')');
-
-    console.log(newtable);
-
-    const tableparent = document.getElementById('tables');
-    
-    $(tableparent).append(
-        $('<div>')
-            .attr('id', 'table' + tnum)
-            .css('background-color', newtable.randocol)
-            .addClass('grouptable')
-            .html('TABLE #' + tnum)
-    )
-};
-
-function addplayerfunc(pname, table) {
-    console.log(pname, table);
-    pnum++;
-    table.append(
-        $('<div>')
-        .addClass('playertile')
-        .text(pname)
-    )
-}
-
-const addtable = document.getElementById('addtable');
-addtable.addEventListener('click', function () {
-    buildtable();
-})
-
-const addplayer = document.getElementById('addplayer');
-const pinput = document.getElementById('playerinput');
-addplayer.addEventListener('click', function () {
-    if (tnum == 0 || tnum*6 <= pnum) {
-        addtable.click();
-        addplayerfunc(pinput.value, $('#table' + tnum));
-        return;
+    function player(name, table) {
+        this.name = name;
+        this.table = table;
     }
-    else {
-        addplayerfunc(pinput.value, $('#table' + tnum));
+
+    function table(tablenum) {
+        this.tablenum = tablenum;
+        this.r = Math.round(Math.random() * 150);
+        this.b = Math.round(Math.random() * 150);
+        this.g = Math.round(Math.random() * 150);
+        this.bg = 'rgb(' + (this.r + 175) + ', ' + (this.b + 175) + ', ' + (this.g + 175) + ')';
+        this.border = 'rgb(' + this.r + ', ' + this.b + ', ' + this.g + ')';
+        this.players = 0;
+        this.id = 'table'+tablenum;
     }
-});
+
+    tablebtn.addEventListener('click', function () {
+
+        tnum++;
+        let newtable = new table(tnum);
+
+        playerbtn.addEventListener('click', function(){
+            
+            const playerin = document.getElementById('playerinput');
+            newtable.players++;
+
+            $('<div>')
+                .addClass('playerbox')
+                .text(playerin.value);
+
+        });
+
+        const tableparent = document.getElementById('tables');
+        $(tableparent).append(
+            $('<div>')
+                .attr('id', 'table' + tnum)
+                .css('background-color', newtable.bg)
+                .css('border', 'solid 2px ' + newtable.border)
+                .addClass('grouptable')
+                .html('TABLE #' + tnum)
+        )
+    });
+
+}());
