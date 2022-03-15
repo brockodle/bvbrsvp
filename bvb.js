@@ -18,18 +18,18 @@ function buildtable() {
 
     tnum++;
 
-    let newtable = new table(tnum, 'rgb('+Math.round((Math.random()*150)+155)+', '+Math.round((Math.random()*150)+155)+', '+Math.round((Math.random()*150)+155)+')');
+    let newtable = new table(tnum, 'rgb(' + Math.round((Math.random() * 150) + 155) + ', ' + Math.round((Math.random() * 150) + 155) + ', ' + Math.round((Math.random() * 150) + 155) + ')');
 
     console.log(newtable);
 
     const tableparent = document.getElementById('tables');
-    
+
     $(tableparent).append(
         $('<div>')
-            .attr('id', 'table' + tnum)
-            .css('background-color', newtable.randocol)
-            .addClass('grouptable')
-            .html('TABLE #' + tnum)
+        .attr('id', 'table' + tnum)
+        .css('background-color', newtable.randocol)
+        .addClass('grouptable')
+        .html('TABLE #' + tnum)
     )
 };
 
@@ -44,19 +44,19 @@ function addplayerfunc(pname, table) {
 }
 
 const addtable = document.getElementById('addtable');
-addtable.addEventListener('click', function () {
+addtable.addEventListener('click', function() {
     buildtable();
 })
 
 const addplayer = document.getElementById('addplayer');
 const pinput = document.getElementById('playerinput');
-addplayer.addEventListener('click', function () {
-    if (tnum == 0 || tnum*6 <= pnum) {
+addplayer.addEventListener('click', function() {
+    if (tnum == 0 || tnum * 6 <= pnum) {
         addtable.click();
         addplayerfunc(pinput.value, $('#table' + tnum));
         return;
-    }
-    else {
+    } else {
         addplayerfunc(pinput.value, $('#table' + tnum));
+        return;
     }
 });
