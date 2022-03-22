@@ -5,6 +5,7 @@
     "@fortawesome/fontawesome-free": "latest",
     "bootstrap": "latest",
     "jquery": "latest",
-    "lite-server": "latest"
+    "lite-server": "^2.6.1",
+    "yarn": "^1.22.17"
   }
 }
